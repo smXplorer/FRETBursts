@@ -42,11 +42,11 @@ Next, in the new Jupyter Notebook Dashboard click on the folder containing
 the FRETBursts notebooks and open the us-ALEX tutorial and follow the
 instructions therein.
 
-Remember, to run the notebooks step-by-step (one cell a time) keep pressing
+Remember that to run the notebooks step-by-step (one cell a time) keep pressing
 *shift + enter*. To run the entire notebook in a single step click on menu
 *Cell -> Run All*.
 
-For more info how to run/edit a notebook see |run_notebook|.
+For more info on how to run/edit a notebook see |run_notebook|.
 
 .. |run_notebook| raw:: html
 
