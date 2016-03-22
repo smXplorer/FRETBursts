@@ -4,14 +4,14 @@
 # Copyright (C) 2014-2016 Antonino Ingargiola <tritemio@gmail.com>
 #
 """
-In this module we define the class :class:`Ph_sel` used to specify a
+In this module, we define the class :class:`Ph_sel` used to specify a
 "selection" of a sub-set of photons/timestamps  (i.e. all-photons,
 Donor-excitation-period photons, etc...).
 
-A photon selection is one of the base *photon streams* or a combination of
-them. Base *photon streams* are photon from the donor (or acceptor) emission
-channel detected during the donor (or acceptor) excitation period. For
-non-ALEX data there is only the donor excitation period.
+A photon selection can be one of the base *photon streams* or a combination of
+them. The base *photon streams* are: photon from the donor (or acceptor) emission
+channel, detected during the donor (or acceptor) excitation period. For
+non-ALEX data, only the donor excitation period streams are defined.
 
 The following table shows base *photon streams* for smFRET data (non-ALEX):
 
@@ -33,19 +33,19 @@ D-emission during A-excitation   `Ph_sel(Aex='Dem')`
 A-emission during A-excitation   `Ph_sel(Aex='Aem')`
 ==============================   =====================
 
-Additionally, all the photons can be selected with `Ph_sel('all')` (that is a
-shortcut for  `Ph_sel(Dex='DAem', Aex='DAem')`.
+Additionally, all photons can be selected with `Ph_sel('all')` (this is a
+shortcut for  `Ph_sel(Dex='DAem', Aex='DAem')` as explained below).
 
 Examples:
 
     - `Ph_sel(Dex='DAem', Aex='DAem')` or `Ph_sel('all')` select all photons.
     - `Ph_sel(Dex='DAem')` selects only donor and acceptor photons
-      emitted during donor excitation. These are all the photons for
+      emitted during donor excitation. These are all photons in
       non-ALEX data.
-    - `Ph_sel(Dex='Aem', Aex='Aem')` selects all the photons detected from
+    - `Ph_sel(Dex='Aem', Aex='Aem')` selects all photons detected in
       the acceptor-emission channel.
 
-The documentation for the :class:`Ph_sel` class follows.
+The documentation for the :class:`Ph_sel` class can be found below.
 
 """
 
@@ -56,7 +56,7 @@ from collections import namedtuple
 #
 #   This class is implemented as a named tuple that is an immutable object.
 #   This means the Ph_sel objects can be used as dictionary keys. This would
-#   not be possible if Ph_sel were a dict. The __new__ method is just a nicety
+#   not be possible if Ph_sel were dict objects. The __new__ method is just a nicety
 #   to allow only valid arguments values and to throw meaningful exceptions
 #   otherwise.
 #
